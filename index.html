@@ -1,32 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
+    />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <title>Welcome to RMIT Campus Maps!</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="header">
-        <nav>
-            <a href="index.html">
-            <img src="image/logo.png" alt="logo">
-            </a>
-            <h1> Welcome to RMIT Maps! </h1>
-        </nav>
-        <hr color="navy" height="10px">
+      <nav>
+        <a href="index.html">
+          <img src="image/logo.png" alt="logo" />
+        </a>
+        <h1>Welcome to RMIT Maps!</h1>
+      </nav>
+      <hr color="navy" height="10px" />
     </section>
-    <section class="maps">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.065984050124!2d106.69137860412818!3d10.729394233591961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fbea5fe3db1%3A0xfae94aca5709003f!2sRMIT%20University%20Vietnam%20-%20Saigon%20South%20campus!5e0!3m2!1sen!2s!4v1701755433719!5m2!1sen!2s" width="1200" height="650" style="border:2px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <br><br>
-        <h3> 702 Đ. Nguyễn Văn Linh, Tân Hưng, Quận 7, Thành phố Hồ Chí Minh 700000, Vietnam </h3>
+    <!-- <section class="wholemaps">
+        <img src="image/campus.png" usemap="#image-map">
+
+        <map name="image-map">
+            <div id=sports hall>
+                <area target="" alt="Sports Hall" title="Sports Hall" href="index.html" coords="108,171,107,193,150,301,194,312,224,311,231,325,334,328,359,312,374,308,395,285,348,169,319,169,237,147" shape="poly">
+            </div>
+            
+                <area target="" alt="Building 8" title="Building 8" href="index.html" coords="395,65,391,134,432,219,454,202,502,200,498,143,550,145,547,96,535,65" shape="poly">
+            <area target="" alt="Building 10" title="Building 10" href="index.html" coords="453,222,448,265,488,354,628,353,629,287,610,250,547,247,537,229,516,199,457,203" shape="poly">
+            <area target="" alt="Building 1" title="Building 1" href="index.html" coords="891,168,888,191,837,196,804,226,827,289,872,305,852,326,878,345,1023,356,1122,357,1207,332,1206,305,1215,306,1214,253,1208,241,1208,210,1196,210,1179,198,944,195,927,167" shape="poly">
+            <area target="" alt="Building 2" title="Building 2" href="index.html" coords="1467,134,1468,192,1420,212,1265,210,1268,236,1295,241,1278,253,1275,292,1293,325,1337,309,1344,328,1338,352,1577,352,1579,137" shape="poly">
+        </map>
+    </section> -->
+
+    <!--- Creating GeoJSON Location F0r Navigation --->
+    <section class="location">
+      <div id="map" style="width: 100%; height: 800px"></div>
+      <script>
+        // Creating map options
+        var mapOptions = {
+          center: [10.7295, 106.6945],
+          zoom: 18,
+        };
+        // Creating a map object
+        var map = new L.map("map", mapOptions);
+
+        // Creating a Layer object
+        var layer = new L.TileLayer(
+          "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        );
+
+        // Adding layer to the map
+        map.addLayer(layer);
+
+        // Creating latlng object
+        var latlang = [
+          [
+            [10.7292, 106.6958],
+            [10.7295, 106.6958],
+            [10.7295, 106.6954],
+            [10.7294, 106.6954],
+          ],
+          [
+            [10.7292, 106.6958],
+            [10.7295, 106.6958],
+            [10.7295, 106.6964],
+            [10.7294, 106.6964],
+          ],
+          [
+            [10.7292, 106.6958],
+            [10.7296, 106.6958],
+            [10.7296, 106.6946],
+            [10.72946, 106.6946],
+            [10.72948, 106.69275],
+          ],
+          [
+            [10.7292, 106.6958],
+            [10.7296, 106.6958],
+            [10.7296, 106.6946],
+            [10.72946, 106.6946],
+            [10.72948, 106.69355],
+            [10.72937, 106.69355],
+            [10.72937, 106.69345],
+          ],
+          [
+            [10.7292, 106.6958],
+            [10.7296, 106.6958],
+            [10.7296, 106.6946],
+            [10.72946, 106.6946],
+            [10.72948, 106.69355],
+            [10.72957, 106.69355],
+            [10.72957, 106.69345],
+          ],
+        ];
+
+        // Creating poly line options
+        var multiPolyLineOptions = { color: "red" };
+
+        // Creating multi poly-lines
+        var multipolyline = L.multiPolyline(latlang, multiPolyLineOptions);
+
+        // Adding multi poly-line to map
+        multipolyline.addTo(map);
+      </script>
     </section>
-    <section class="wholemaps">
-        <img src="https://static.wixstatic.com/media/1c3eab_a8742ab7813b4334ad24b36e92ed68d5~mv2.png/v1/fill/w_978,h_304,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/campus%20map-01.png" alt="campus map-01.png"  width="1200" height="400" srcset="https://static.wixstatic.com/media/1c3eab_a8742ab7813b4334ad24b36e92ed68d5~mv2.png/v1/fill/w_978,h_304,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/campus%20map-01.png" fetchpriority="high">
+  </body>
+
+  <footer>
+    <section class="footer">
+      <ul>
+        <li>Building 1</li>
+        <li>Building 2</li>
+        <li>Building 8</li>
+        <li>Building 10</li>
+        <li>Sports Hall</li>
+      </ul>
     </section>
-
-
-
-
-    </body>
+  </footer>
 </html>
