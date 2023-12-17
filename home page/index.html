@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMIT Map</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!----------header section starts------------->
+
+    <section class="header">
+        <nav>
+            <a href="#"><img src="imagies/logo.png"></a>>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Campus Map</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1>RMIT university campus map</h1>
+            <p>RMIT university is in top 1% best universities in the world.<br> 
+            It has three campuses, which are located in Melbourne, Australia,<br> 
+            Saigon, Vietnam, and Hanoi, Vietnam.<br> In our website you 
+            can find detailed map of Saigon campus
+            </p>
+            <a href="#" class="hero-btn">View Saigon campus map</a>
+        </div>
+
+    </section>
+    <!---------header section ends------------>
+
+    <!---------campus description section starts---------->
+
+    <section class="campus">
+
+        <h1>Our Saigon campus</h1>
+        <p>Saigon South campus cosists 4 buildings and a big sport feild.</p>
+
+        <div class="row">
+            <div class="campus-col">
+                    <img src="imagies/building1.jpg" alt="building 1">
+                <div class="layer">
+                    <h3>Building 1</h3> 
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="imagies/building2.jpg" alt="building 2">
+            <div class="layer">
+                <h3>Building 2</h3> 
+            </div>
+        </div>
+            <div class="campus-col">
+                <img src="imagies/building8.jpg" alt="building 8">
+            <div class="layer">
+                <h3>Building 8</h3> 
+            </div>
+        </div>
+        <div class="campus-col">
+            <img src="imagies/building10.jpg" alt="building 10">
+        <div class="layer">
+            <h3>Building 10</h3> 
+        </div>
+    </div>  
+        </div>
+    </section>
+
+    
+    <section class="about">          
+       <h1>About us</h1>
+        <p>Some text sjdje fjewnfjkwe salkdjoeijd ddk wodkwo.</p>  
+    <div class="row">
+        
+    </div>
+
+    </section>
+
+
+    <!---------campus description section starts---------->
+
+
+    <!-----JavaScript starts----->
+    <script>
+//  For toggler
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+        navLinks.style.display = "block";
+    }
+    function hideMenu() {
+        navLinks.style.display = "none";
+    }
+
+    </script>
+    <!-----JavaScript ends------>
+
+
+
+</body>
+</html>
