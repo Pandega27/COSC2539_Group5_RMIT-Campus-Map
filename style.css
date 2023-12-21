@@ -1,38 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif JP', serif;
+    text-transform: capitalize;
+    scroll-behavior: smooth;
+}
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.nav-links ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+}
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 4px;
+    background: #E61E2A;
+    display: block;
+    margin-top: 1px;
+    transition: 1s;
+}
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+.head{
+  height: 60vh;
+  background-image: url(image/building\ cover1.png);
+}
+.text-box {
+    width: 100%;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.text-box h1 {
+    font-size: 65px;
+    margin-top: -3%;
+}
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 12px 34px;
+    font-size: 18px;
+    font-weight: bold;
+    background: red;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover {
+    border: 2px solid red;
+    border-radius: 10px;
+    background: red;
+    transition: 1s;
+    color: white;
+}
+nav .fa {
+    display: none;
+}
+/* Campus pictures section*/
+
+.campus {
+    width: 89%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image/building.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+.campus h1{
+  font-size: 50px;
+  color: white;
+}
+.campus p{
+  font-size: 20px;
+  color: white;
+}
+.row {
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+.campus-col {
+  width: 100%;
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin: 0 30px 65px;
+    position: relative;
+    overflow: hidden;
+}
+.campus-col img {
+    width: 100%;
+    display: block;
+}
+.layer {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+.layer:hover {
+    background: #0000009f;
+}
+.layer h3 {
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 1s;
+}
+.layer:hover h3 {
+    bottom: 25%;
+    opacity: 1;
+}
+
+
+/* About us section */
+.container {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around
+}
+.about {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.about h1{
+  font-size: 50px;
+}
+.about-col {
+    flex-basis: 40%;
+    background: #ffd4d724;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 35px rgb(204 202 202);
+}
+.about-col h3{
+  font-size: 30px;
+}
+.about-col p{
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: -40px;
+
+}
+
+/* contact us */
+
+.cta {
+    margin: auto;
+    margin-top: 5%;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image/Building1.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px ;
+    margin-bottom: 5%;
+}
+.cta h1 {
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+.cta h2{
+  margin-top: 3%;
+  color: white;
+}
+.hero-btn1 {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.hero-btn1:hover {
+  border: 1px solid red;
+  border-radius: 10px;
+  background: red;
+  transition: 1s;
+  color: white;
+}
+
+/* Campus building description*/
+
+.description {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    border-radius: 30px;
+    margin-top: 5%;
+}
+.description h1{
+  font-size: 50px;
+  margin-bottom: 3%;
+}
+.info-box {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 32%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2%;
+    padding: 20px 12px;
+}
+.info-box .image {
+    margin: 30px;
+}
+.info-box img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    height: 400px;
+    width: 650px;
+}
+.info-box .info {
+    margin: 30px 10px;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.info-box .info h2{
+    margin: 10px;
+    font-size: 40px;
+}
+.info p{
+  line-height: 2;
+}
+
+.icons .fa-brands{
+    color:#E61E2A;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+
+
+
+
+
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
-
 .header{
-    margin-top: 2%;
-    align-content: center;
+    text-align: center;
 }
 .header h1{
     font-size: 50px;
-    float: left;
-    margin-left: 20px;
+    margin-right: 10%;
 }
 nav{
-    display: flex;
-    padding: 2% 23%;
-    margin-right: 2%;
-    justify-content: space-between;
+    padding: 20px;
     align-items: center;
-    margin-bottom: 1.5%;
     background-color: white;
 }
 nav img{
-    width: 220px;
-    margin-top: -1%;
+    width: 170px;
+    margin-top: 0.1%;
+    margin-left: 1%;
+    float:left;
 }
 .header hr{
-    height:2px
+    height:4px
 }
-.wholemaps{
+.enter{
+  margin-top: 42%;
+  margin-bottom: -80%;
+}
+.modal-header {
+  color: white;
+  text-decoration: none;
+  margin-top: 1%;
+  text-align: center;
+}
+.modal-header img{
+    margin-top: 2%;
+}
+.modal-header h2{
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+  width: 80%;
+}
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: navy;
+  color: white;
+  text-align: center;
+  margin-top: 2%;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  float: right;
+  background-color: navy;
+  width: 40%;
+  height: 100%;
+  animation-name: animatetop;
+  animation-duration: 1s;
+  margin-top: -42%;
+}
+.modal-contentb1 {
+    position: relative;
+    float: right;
+    background-color: navy;
+    width: 100%;
+    height: 100%;
+    animation-name: animatetop;
+    animation-duration: 1s;
+    margin-top: -42.1%;
+
+}
+img .b1{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.modal-header {
+    background-color: navy;
+    color: white;
+    text-decoration: none;
+    margin-top: 1%;
+  }
+
+
+/* Add Animation */
+@keyframes animatetop {
+  from {right: 300px; opacity: 0}
+  to {right: 0; opacity: 1}
+}
+.button{
     text-align: center;
-    margin-top: 3%;
-    margin-bottom: 3%;
+}
+.button-press{
+    border-radius: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 2px solid red;
+    padding: 5px 50px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.button-press:hover{
+    border: 2px solid red;
+    background: red;
+    transition: 1s;
+}
+.btn{
+  float: left;
+  text-decoration: none;
+  margin-left: 2%;
+
+}
+.footer{
+    position: fixed;
+    bottom: 0%;
+    background-color: rgb(1, 1, 70);
+    width: 100%;
+    text-align: center;
 }
 .footer ul{
     text-align: center;
@@ -42,8 +431,176 @@ nav img{
     display: inline-block;
     padding: 8px 12px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    
-    
+}
+.footer h2{
+  color: white;
+  font-size: 20px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+li{
+    color: white;
+    cursor: pointer;
+}
+li:hover{
+    color: red;
+    transition: 1s;
+}
+
+.mySlides {
+    display: none;
+}
+.mySlides h3{
+  color: white;
+  font-size: 40px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.mySlides img{
+    border-style: 2px solid;
+    border-color:  rgb(11, 11, 68);
+    border-radius: 10px;
+    border-width: 5px;
+    width: 1000px; 
+    height: 550px
+}
+  
+  /* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+  /* Next & previous buttons */
+.prev,
+.next {
+    cursor:pointer;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+    border-radius: 5px 5px 5px 5px;
+}
+  
+  /* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+p #caption{
+    font-size: 100px;
+
+
+} 
+
+  /* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+  
+  /* Container for image text */
+.caption-container {
+    text-align: center;
+    padding: 2px 16px;
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 1%;
+}
+.caption-container hr{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+  
+  /* Add a transparency effect for thumnbail images */
+.scroll-section {
+    opacity: 0.6;
+    border-style: solid;
+    border-color:  red;
+    border-radius: 10px;
+    border-width: 2px;
+    cursor: pointer;
+}
+.active,
+.scroll-section:hover {
+    opacity: 1;
+    transition: 1s;
+}
+.scroll-s:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.inner{
+  display: inline-flex;
+  width: 100%;
+  height: 770px;
+  justify-content: space-evenly;
+}
+.scroll-container {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-snap-type: mandatory;
+  scroll-behavior: smooth;
+  font-size: 0px;
+}
+
+.scroll-container .scroll-section {
+  display: inline-block;
+  background: #fff;
+  border: solid 1px #ccc;
+  padding-bottom: 40%;
+}
+
+.scroll-container.same-size {
+  padding-bottom: 1%;
+  height: 750px;
+  width: 25%;
+  margin-left: -10%;
+}
+
+.scroll-container.same-size .wrap {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 5%;
+  display: block;
+}
+.wrap h3{
+  color: white;
+  font-size: 20px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+.scroll-container.same-size .scroll-section {
+  height: 100%;
+  width: 100%;
+  border: solid 1px #ccc;
+  background: #eee;
+  padding: 15px;
+}
+/* width */
+.scroll-container.same-size::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+.scroll-container.same-size::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px grey;
+}
+/* Handle */
+.scroll-container::-webkit-scrollbar-thumb {
+  background: darkgray;
 }

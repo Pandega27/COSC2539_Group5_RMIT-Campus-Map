@@ -3,125 +3,251 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <title>RMIT Map</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <link
       rel="stylesheet"
-      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
-    />
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <title>Welcome to RMIT Campus Maps!</title>
+    <link rel="icon" type="image/x-icon" href="image/icon.png" />
   </head>
   <body>
+    <!----------header section starts------------->
+
     <section class="header">
       <nav>
-        <a href="index.html">
-          <img src="image/logo.png" alt="logo" />
-        </a>
-        <h1>Welcome to RMIT Maps!</h1>
+        <a href="#"><img src="image/logo.png" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="maps.html">Campus Map</a></li>
+            <li><a href="https://www.rmit.edu.vn/contact-us">Contact us</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
-      <hr color="navy" height="10px" />
+      <hr color="red" height="10px" />
     </section>
-    <!-- <section class="wholemaps">
-        <img src="image/campus.png" usemap="#image-map">
 
-        <map name="image-map">
-            <div id=sports hall>
-                <area target="" alt="Sports Hall" title="Sports Hall" href="index.html" coords="108,171,107,193,150,301,194,312,224,311,231,325,334,328,359,312,374,308,395,285,348,169,319,169,237,147" shape="poly">
+    <section class="head">
+      <div class="text-box">
+        <h1>WELCOME TO RMIT UNIVERSITY</h1>
+        <p style="line-height: 1.5">
+          RMIT university is in top 1% best universities in the world.<br />
+          It has three campuses, which are located in Melbourne, Australia,<br />
+          Saigon, Vietnam, and Hanoi, Vietnam.<br />
+          In our website you can find detailed map of Saigon campus
+        </p>
+        <a href="maps.html" class="hero-btn">View Saigon South Campus Map</a>
+      </div>
+    </section>
+    <!---------header section ends------------>
+
+    <!---------about us section starts---------->
+
+    <section class="about">
+      <h1>About us</h1>
+      <div class="container">
+        <div class="about-col">
+          <h3>Our Team</h3>
+          <p style="line-height: 2">
+            1. Pandega Bimata Abhinaya - S3963166<br />
+            2. David Santoso - S3824127<br />
+            3. Grigory Kovtun - S3927476 <br />
+            4. Polina Rybak - S3969997 <br />
+          </p>
+        </div>
+        <div class="about-col">
+          <h3>Our Achivements</h3>
+          <p style="line-height: 2">
+            1. Front - End Development <br />
+            2. Back - End Development <br />
+            3. Full - Stack Web Development
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!---------about us section ends---------->
+
+    <!---------campus pictures section starts---------->
+
+    <section class="campus">
+      <h1>Our Saigon campus</h1>
+      <p>Saigon South campus cosists 4 buildings and 1 Sports Building.</p>
+
+      <div class="row">
+        <div class="campus-col">
+          <img src="image/building cover1.png" alt="building 1" />
+          <a href="#building1">
+            <div class="layer">
+              <h3>Building 1</h3>
             </div>
-            
-                <area target="" alt="Building 8" title="Building 8" href="index.html" coords="395,65,391,134,432,219,454,202,502,200,498,143,550,145,547,96,535,65" shape="poly">
-            <area target="" alt="Building 10" title="Building 10" href="index.html" coords="453,222,448,265,488,354,628,353,629,287,610,250,547,247,537,229,516,199,457,203" shape="poly">
-            <area target="" alt="Building 1" title="Building 1" href="index.html" coords="891,168,888,191,837,196,804,226,827,289,872,305,852,326,878,345,1023,356,1122,357,1207,332,1206,305,1215,306,1214,253,1208,241,1208,210,1196,210,1179,198,944,195,927,167" shape="poly">
-            <area target="" alt="Building 2" title="Building 2" href="index.html" coords="1467,134,1468,192,1420,212,1265,210,1268,236,1295,241,1278,253,1275,292,1293,325,1337,309,1344,328,1338,352,1577,352,1579,137" shape="poly">
-        </map>
-    </section> -->
-
-    <!--- Creating GeoJSON Location F0r Navigation --->
-    <section class="location">
-      <div id="map" style="width: 100%; height: 800px"></div>
-      <script>
-        // Creating map options
-        var mapOptions = {
-          center: [10.7295, 106.6945],
-          zoom: 18,
-        };
-        // Creating a map object
-        var map = new L.map("map", mapOptions);
-
-        // Creating a Layer object
-        var layer = new L.TileLayer(
-          "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        );
-
-        // Adding layer to the map
-        map.addLayer(layer);
-
-        // Creating latlng object
-        var latlang = [
-          [
-            [10.7292, 106.6958],
-            [10.7295, 106.6958],
-            [10.7295, 106.6954],
-            [10.7294, 106.6954],
-          ],
-          [
-            [10.7292, 106.6958],
-            [10.7295, 106.6958],
-            [10.7295, 106.6964],
-            [10.7294, 106.6964],
-          ],
-          [
-            [10.7292, 106.6958],
-            [10.7296, 106.6958],
-            [10.7296, 106.6946],
-            [10.72946, 106.6946],
-            [10.72948, 106.69275],
-          ],
-          [
-            [10.7292, 106.6958],
-            [10.7296, 106.6958],
-            [10.7296, 106.6946],
-            [10.72946, 106.6946],
-            [10.72948, 106.69355],
-            [10.72937, 106.69355],
-            [10.72937, 106.69345],
-          ],
-          [
-            [10.7292, 106.6958],
-            [10.7296, 106.6958],
-            [10.7296, 106.6946],
-            [10.72946, 106.6946],
-            [10.72948, 106.69355],
-            [10.72957, 106.69355],
-            [10.72957, 106.69345],
-          ],
-        ];
-
-        // Creating poly line options
-        var multiPolyLineOptions = { color: "red" };
-
-        // Creating multi poly-lines
-        var multipolyline = L.multiPolyline(latlang, multiPolyLineOptions);
-
-        // Adding multi poly-line to map
-        multipolyline.addTo(map);
-      </script>
+          </a>
+        </div>
+        <div class="campus-col">
+          <img src="image/building cover2.png" alt="building 2" />
+          <a href="#building2">
+            <div class="layer">
+              <h3>Building 2</h3>
+            </div>
+          </a>
+        </div>
+        <div class="campus-col">
+          <img src="image/building cover3.png" alt="building 8" />
+          <a href="#building8">
+            <div class="layer">
+              <h3>Building 8</h3>
+            </div>
+          </a>
+        </div>
+        <div class="campus-col">
+          <img src="image/building cover4.png" alt="building 10" />
+          <a href="#building9">
+            <div class="layer">
+              <h3>Building 9</h3>
+            </div>
+          </a>
+        </div>
+        <div class="campus-col">
+          <img src="image/sportshall1.png" alt="building 10" />
+          <a href="#building9">
+            <div class="layer">
+              <h3>Sports Hall</h3>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
-  </body>
 
-  <footer>
+    <!---------campus pictures section starts---------->
+
+    <!------------campus buildings description section starts-->
+
+    <section class="description">
+      <h1>Our buildings</h1>
+      <div class="info-box" id="building1">
+        <div class="image">
+          <img src="image/Building1.png" />
+        </div>
+        <div class="info">
+          <h2>Academic building 1</h2>
+          <p>
+            Some text exapmle Some text exapmle Some text exapmle Some text
+            exapmleSome text exapmle Some text exapmle Some text exapmle Some
+            text exapmle Some text exapmle Some text exapmle Some text exapmle
+            Some text exapmle Some text exapmle Some text exapmle
+          </p>
+        </div>
+      </div>
+
+      <div class="info-box reverse" id="building2">
+        <div class="info">
+          <h2>Academic building 2</h2>
+          <p>
+            Some text exapmle Some text exapmle Some text exapmle Some text
+            exapmleSome text exapmle Some text exapmle Some text exapmle Some
+            text exapmle Some text exapmle Some text exapmle Some text exapmle
+            Some text exapmle Some text exapmle Some text exapmle
+          </p>
+        </div>
+        <div class="image">
+          <img src="image/building cover2.png" />
+        </div>
+      </div>
+
+      <div class="info-box" id="building8">
+        <div class="image">
+          <img src="image/building cover3.png" />
+        </div>
+        <div class="info">
+          <h2>Building 8</h2>
+          <p>
+            Some text exapmle Some text exapmle Some text exapmle Some text
+            exapmleSome text exapmle Some text exapmle Some text exapmle Some
+            text exapmle Some text exapmle Some text exapmle Some text exapmle
+            Some text exapmle Some text exapmle Some text exapmle
+          </p>
+        </div>
+      </div>
+
+      <div class="info-box reverse" id="building9">
+        <div class="info">
+          <h2>Building 9</h2>
+          <p>
+            Some text exapmle Some text exapmle Some text exapmle Some text
+            exapmleSome text exapmle Some text exapmle Some text exapmle Some
+            text exapmle Some text exapmle Some text exapmle Some text exapmle
+            Some text exapmle Some text exapmle Some text exapmle
+          </p>
+        </div>
+        <div class="image">
+          <img src="image/building9.png" />
+        </div>
+      </div>
+
+      <div class="info-box" id="building8">
+        <div class="image">
+          <img src="image/sportshall1.png" />
+        </div>
+        <div class="info">
+          <h2>Building 8</h2>
+          <p>
+            Some text exapmle Some text exapmle Some text exapmle Some text
+            exapmleSome text exapmle Some text exapmle Some text exapmle Some
+            text exapmle Some text exapmle Some text exapmle Some text exapmle
+            Some text exapmle Some text exapmle Some text exapmle
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!------------campus buildings description section ends-->
+
+    <!----------contact us section starts--------->
+
+    <section class="cta">
+      <h1>Do not hesitate to contact us</h1>
+      <a href="https://www.rmit.edu.vn/contact-us" class="hero-btn1"
+        >contact us</a
+      >
+      <h2>
+        Follow us on our social media down below to keep updated with the
+        current information
+        <div class="icons">
+          <a href="https://www.facebook.com/RMITUniversityVietnam"
+            ><i class="fa-brands fa-facebook" style="color: white"></i
+          ></a>
+          <a href="https://www.instagram.com/rmituniversityvietnam/"
+            ><i class="fa-brands fa-instagram" style="color: white"></i>
+          </a>
+        </div>
+      </h2>
+    </section>
+
+    <!----------contact us section ends--------->
+
+    <!----------footer section starts ------------>
+
     <section class="footer">
-      <ul>
-        <li>Building 1</li>
-        <li>Building 2</li>
-        <li>Building 8</li>
-        <li>Building 10</li>
-        <li>Sports Hall</li>
-      </ul>
+      <h2>Hi - Tech Squad&copy</h2>
     </section>
-  </footer>
+
+    <!----------footer section ends ------------>
+
+    <!-----JavaScript starts----->
+    <script>
+      //  For toggler
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.display = "block";
+      }
+      function hideMenu() {
+        navLinks.style.display = "none";
+      }
+    </script>
+    <!-----JavaScript ends------>
+  </body>
 </html>
