@@ -741,11 +741,10 @@ background-position-x: center;
   color: black;
   position: absolute;
   text-align: center;
-  top: 65%;
+  top: 55%;
 }
 .text-box h1 {
   font-size: 35px;
-  margin-top: 10%;
   margin-bottom: 5%;
 }
 .text-box p {
