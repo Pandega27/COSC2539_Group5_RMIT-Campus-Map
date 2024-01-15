@@ -4,25 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
-    />
-    <link
-      rel="stylesheet"
-      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
-    />
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <title>Welcome to Sports Hall</title>
+    <title>Welcome to Building 1</title>
     <link rel="icon" type="image/x-icon" href="image/icon.png" />
   </head>
-
   <body>
     <section class="header">
       <nav>
-        <a href="index.html" class="img"><img src="image/logo.png" /></a>
+        <a href="index.html" class="img">
+          <img src="image/logo.png" alt="logo" />
         </a>
-        <h1>RMIT - Sports Hall Campus Maps</h1>
+        <h1>RMIT - Building 1 Campus Maps</h1>
       </nav>
       <hr color="red" height="10px" />
     </section>
@@ -34,7 +25,7 @@
             <div class="wrap">
               <img
                 class="scroll-section"
-                src="image/Sportshall 1st.png"
+                src="image/B1 1st.png"
                 style="width: 50%; height: 30%"
                 onclick="currentSlide(1)"
               />
@@ -43,30 +34,67 @@
             <div class="wrap">
               <img
                 class="scroll-section"
-                src="image/Sportshall 2nd.png"
+                src="image/B1 2nd.png"
                 style="width: 50%; height: 40%"
                 onclick="currentSlide(2)"
               />
               <h3>2nd Level</h3>
             </div>
+            <div class="wrap">
+              <img
+                class="scroll-section"
+                style="width: 50%; height: 40%"
+                src="image/B1 3rd.png"
+                onclick="currentSlide(3)"
+              />
+              <h3>3rd Level</h3>
+            </div>
+            <div class="wrap">
+              <img
+                class="scroll-section"
+                src="image/B1 4th.png"
+                style="width: 50%; height: 40%"
+                onclick="currentSlide(4)"
+              />
+              <h3>4th Level</h3>
+            </div>
+            <div class="wrap">
+              <img
+                class="scroll-section"
+                src="image/B1 5th.png"
+                style="width: 50%; height: 40%"
+                onclick="currentSlide(5)"
+              />
+              <h3>5th Level</h3>
+            </div>
           </div>
 
           <div class="modal-header">
-            <a
-              href="maps.html"
-              class="btn"
-              style="margin-right: -15%; float: right; font-size: 30px"
-            >
-              ❌
-            </a>
+            <a href="maps.html" class="btn1" style="font-size: 30px"> ❌ </a>
             <div class="mySlides">
-              <img src="image/Sportshall 1st.png" />
+              <img src="image/B1 1st.png" />
               <h3>1st Level</h3>
             </div>
 
             <div class="mySlides">
-              <img src="image/Sportshall 2nd.png" />
+              <img src="image/B1 2nd.png" />
               <h3>2nd Level</h3>
+            </div>
+
+            <div class="mySlides">
+              <img src="image/B1 3rd.png" />
+              <h3>3rd Level</h3>
+            </div>
+
+            <div class="mySlides">
+              <img src="image/B1 4th.png" />
+              <h3>4th Level</h3>
+            </div>
+
+            <div class="mySlides">
+              <div class="numbertext"></div>
+              <img src="image/B1 5th.png" />
+              <h3>5th Level</h3>
             </div>
 
             <!-- Next and previous buttons -->
