@@ -27,15 +27,25 @@
       </nav>
       <hr color="navy" height="10px" />
     </section>
+    
+
 
     <!--- Creating GeoJSON Location F0r Navigation --->
     <section class="location">
-      <div id="map" style="width: 100%; height: 750px"></div>
+      <div id="map" style="width: 100%; height: 800px"></div>
       <script>
+        var width = window.innerWidth;
+        console.log(width);
+
+        let zoom = 18; // desktop
+        if (width < 500) {
+          zoom = 17;
+        }
+
         // Creating map options
         var mapOptions = {
           center: [10.7295, 106.6945],
-          zoom: 18,
+          zoom,
         };
         // Creating a map object
         var map = new L.map("map", mapOptions);
@@ -64,26 +74,52 @@
         L.marker([10.72928, 106.69522],{
           title:"Building 1",
         })
-        .bindPopup('<span class="button"> <b> Building 1 </b> <br> <a href="building1.html"> View more </a><br> </span>')
+        .bindPopup('<span class="button"> <b> Building 1 </b> <br> <a href="building1.html"> Whats in Building 1? </a> <br><br> <a href="navb1.html"> Navigate To B1 </a><br> </span>')
         .addTo(map);
 
         L.marker([10.72928, 106.6963],{title:"Building 2"})
-        .bindPopup('<span class="button"> <b> Building 2 </b> <br> <a href="building2.html"> View more </a><br> </span>')
+        .bindPopup('<span class="button"> <b> Building 2 </b><br> <a href="building2.html"> Whats In Building 2? </a><br> <br> <a href="navb2.html"> Navigate To B2 </a><br> </span>')
         .addTo(map);
 
         L.marker([10.72962, 106.69345],{title:"Building 9"})
-        .bindPopup('<span class="button"> <b> Building 9 </b> <br> <a href="building9.html"> View more </a><br> </span>')
+        .bindPopup('<span class="button"> <b> Building 9 </b> <br> <a href="building9.html"> Whats in Building 9? </a><br> <br> <a href="navb9.html"> Navigate To B9 </a><br> </span>')
         .addTo(map);
 
         L.marker([10.72927, 106.69345],{title:"Building 8"})
-        .bindPopup('<span class="button"> <b> Building 8 </b> <br> <a href="building8.html"> View more </a><br> </span>')
+        .bindPopup('<span class="button"> <b> Building 8 </b> <br> <a href="building8.html"> Whats in Building 8? </a><br> <br> <a href="navb8.html"> Navigate To B8 </a><br> </span>')
         .addTo(map);
 
         L.marker([10.72948, 106.69275],{title:"Sports Hall"})
-        .bindPopup('<span class="button"> <b> Sports Hall </b> <br> <a href="sporthall.html"> View more </a><br> </span>') 
+        .bindPopup('<span class="button"> <b> Sports Hall </b> <br> <a href="sporthall.html"> Whats in Sports Hall? </a><br><br> <a href="navsportshall.html"> Navigate To Sports Hall </a><br> </span>') 
         .addTo(map);
-    
     </script>
+
+    <div class="modal-content" style="width: 20%;">
+      <div class="modal-header">
+        <div class="button">
+          <br>
+          <h4 style="font-size: 25px;">RMIT Maps Instructions</h4>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <hr color="red" height="10px" />
+          <br>
+          <p class="modal-footer" style="font-weight: 600; line-height: 1.5;"> 
+
+            by Picking one of the marker on the maps, there will be a choice to pick.
+            <br><br>
+            By Clicking "Whats in the building?" it will guide you to the 
+            building that you pick
+            <br><br>
+            By Clicking "Navigate" to guide them from the 
+            RMIT Main gate to the building
+
+            <br>
+            <br>
+          </p>
+          </div>
+    </div>
   </body>
 
   <footer>

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Noto Serif JP', serif;
-    text-transform: capitalize;
-    scroll-behavior: smooth;
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  text-transform: capitalize;
+  scroll-behavior: smooth;
 }
 .nav-links {
     flex: 1;
@@ -37,6 +38,15 @@
 .nav-links ul li:hover::after {
     width: 100%;
 }
+.hero-btn2{
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  float: right;
+  margin-top: -2.25%;
+  padding:0 40px;
+  text-decoration: none;
+}
 .head{
   height: 60vh;
   background-image: url(image/building\ cover1.png);
@@ -52,7 +62,7 @@
 }
 .text-box h1 {
     font-size: 65px;
-    margin-top: -3%;
+    margin-top: -5%;
 }
 .text-box p {
     margin: 10px 0 40px;
@@ -101,6 +111,7 @@ nav .fa {
 .campus p{
   font-size: 20px;
   color: white;
+  margin-top: 1%;
 }
 .row {
     margin-top: 3%;
@@ -143,10 +154,12 @@ nav .fa {
     position: absolute;
     opacity: 0;
     transition: 1s;
+    margin-bottom: 10%;
 }
 .layer:hover h3 {
     bottom: 25%;
     opacity: 1;
+    transition-timing-function: linear;
 }
 
 
@@ -176,6 +189,7 @@ nav .fa {
 }
 .about-col h3{
   font-size: 30px;
+  margin-bottom: 12%;
 }
 .about-col p{
   font-size: 18px;
@@ -185,7 +199,6 @@ nav .fa {
 }
 
 /* contact us */
-
 .cta {
     margin: auto;
     margin-top: 5%;
@@ -202,10 +215,13 @@ nav .fa {
     color: #fff;
     margin-bottom: 40px;
     padding: 0;
+    font-size: 40px;
 }
 .cta h2{
   margin-top: 3%;
   color: white;
+  line-height: 1.5;
+  font-size: 20px;
 }
 .hero-btn1 {
   display: inline-block;
@@ -226,6 +242,49 @@ nav .fa {
   background: red;
   transition: 1s;
   color: white;
+}
+.bg{
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image/building\ cover1.png);
+  margin-top: -50px;
+}
+.option{
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 50px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#contact{
+  font-size: 25px;
+  border: 2px solid;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+.option1{
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#name{
+  font-size: 25px;
+  border: 2px solid;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+#text{
+  height: 250px;
+  width: 700px;
+  font-size: 20px;
 }
 
 /* Campus building description*/
@@ -277,25 +336,14 @@ nav .fa {
 }
 .info p{
   line-height: 2;
+  font-weight: 400;
 }
-
-.icons .fa-brands{
-    color:#E61E2A;
-    margin: 0 13px;
-    cursor: pointer;
-    padding: 18px 0;
-}
-
-
-
-
-
-
 
 *{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 .header{
     text-align: center;
@@ -305,7 +353,7 @@ nav .fa {
     margin-right: 10%;
 }
 nav{
-    padding: 20px;
+    padding: 16px;
     align-items: center;
     background-color: white;
 }
@@ -333,7 +381,7 @@ nav img{
 }
 .modal-header h2{
   position: absolute;
-  top: 32%;
+  top: 23%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 70px;
@@ -357,14 +405,14 @@ nav img{
   height: 100%;
   animation-name: animatetop;
   animation-duration: 1s;
-  margin-top: -42%;
+  margin-top: -41.65%;
 }
 .modal-contentb1 {
     position: relative;
     float: right;
     background-color: navy;
     width: 100%;
-    height: 100%;
+    height: 780px;
     animation-name: animatetop;
     animation-duration: 1s;
     margin-top: -42.1%;
@@ -392,6 +440,13 @@ img .b1{
 .button{
     text-align: center;
 }
+.button b{
+  font-size: 20px;
+}
+.leaflet-container a{
+  font-size: 15px;
+  text-decoration: none;
+}
 .button-press{
     border-radius: 20px;
     display: inline-block;
@@ -414,6 +469,7 @@ img .b1{
   float: left;
   text-decoration: none;
   margin-left: 2%;
+  padding: 5px;
 
 }
 .footer{
@@ -567,7 +623,7 @@ p #caption{
 
 .scroll-container.same-size {
   padding-bottom: 1%;
-  height: 750px;
+  height: 760px;
   width: 25%;
   margin-left: -10%;
 }
@@ -603,4 +659,527 @@ p #caption{
 /* Handle */
 .scroll-container::-webkit-scrollbar-thumb {
   background: darkgray;
+}
+
+@media screen and (max-width: 415px) and (min-width: 345px) {
+  .nav-links {
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    margin-bottom: -30px;
+    margin-top: 34px;
+}
+.nav-links ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+}
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 4px;
+  background: #E61E2A;
+  display: block;
+  margin-top: 1px;
+  transition: 1s;
+}
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+nav{
+padding: 20px;
+align-items: center;
+background-color: white;
+display: inline-grid;
+}
+nav img{
+width: 200px;
+}
+a.img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.head{
+height: 60vh;
+background-image: url(image/building\ cover1.png);
+background-position-x: center; 
+}
+.hero-btn2{
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  margin-top: 4%;
+  margin-bottom: -2%;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+}
+.text-box {
+  width: 100%;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text-box h1 {
+  font-size: 35px;
+  margin-top: -20%;
+  margin-bottom: 5%;
+}
+.text-box p {
+  margin: 10px 0 40px;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+  padding:0 40px
+}
+.about {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.about h1{
+font-size: 35px;
+}
+.container {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+.about {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.about h1{
+font-size: 35px;
+}
+.about-col {
+  background: #ffd4d724;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 35px rgb(204 202 202);
+}
+.about-col h3{
+font-size: 25px;
+margin-bottom: 12%;
+}
+.about-col p{
+font-size: 18px;
+font-weight: 600;
+margin-top: 10px;
+}
+.campus {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image/building.png);
+  background-size: cover;
+  border-radius: 10px;
+}
+.campus h1{
+font-size: 44px;
+color: white;
+}
+.campus p{
+font-size: 19px;
+color: white;
+margin-top: 3%;
+}
+.row {
+  margin-top: 3%;
+  display: block;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.campus-col {
+width: auto;
+  flex-basis: 32%;
+  border-radius: 10px;
+  margin: 0 35px 35px;
+  position: relative;
+  overflow: hidden;
+}
+.campus-col img {
+  width: 100%;
+  display: block;
+}
+.layer {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: .5s;
+}
+.layer:hover {
+  background: #0000009f;
+}
+.layer h3 {
+  width: 100%;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-40%);
+  position: absolute;
+  opacity: 0;
+  transition: 1s;
+  margin-bottom: 10%;
+}
+.layer:hover h3 {
+  bottom: 25%;
+  opacity: 1;
+  transition-timing-function: linear;
+}
+.info-box {
+  flex-direction: column;
+  align-items: center;
+}
+.reverse {
+  flex-direction: column-reverse;
+}
+.info-box img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  height: 200px;
+  width: 250px;
+}
+
+
+.cta {
+  margin: auto;
+  margin-top: 5%;
+  width: 80%;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image/Building1.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px ;
+  margin-bottom: 10%;
+}
+.cta h1 {
+  color: #fff;
+  margin-bottom: 40px;
+  padding: 0;
+  font-size: 30px;
+}
+.cta h2{
+margin-top: 3%;
+color: white;
+line-height: 1.5;
+font-size: 15px;
+}
+
+
+}
+
+@media screen and (max-width: 700px) and (min-width: 415px) {
+.header{
+    text-align: center;
+    display: grid;
+}
+.header h1{
+    font-size: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+}
+a.img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul{
+  text-align: center;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 8px;
+    position: relative;
+    margin-bottom: -30px;
+    margin-top: 34px;
+}
+.nav-links ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 4px;
+    background: #E61E2A;
+    display: block;
+    margin-top: 1px;
+    transition: 1s;
+}
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+nav{
+  padding: 20px;
+  align-items: center;
+  background-color: white;
+  display: inline-grid;
+}
+nav img{
+  width: 250px;
+}
+.head{
+  height: 60vh;
+  background-image: url(image/building\ cover1.png);
+  background-position-x: center; 
+}
+.hero-btn2{
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  margin-top: 4%;
+  margin-bottom: -2%;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.text-box {
+  width: 100%;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text-box h1 {
+  font-size: 35px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.text-box p {
+  margin: 10px 0 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+  padding:0 40px
+}
+.container {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around
+}
+.about {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+.about h1{
+font-size: 35px;
+}
+.about-col {
+  background: #ffd4d724;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 35px rgb(204 202 202);
+}
+.about-col h3{
+font-size: 28px;
+margin-bottom: 12%;
+}
+.about-col p{
+font-size: 20px;
+font-weight: 600;
+margin-top: 10px;
+}
+.campus {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image/building.png);
+  background-size: cover;
+  border-radius: 10px;
+}
+.campus h1{
+font-size: 44px;
+color: white;
+}
+.campus p{
+font-size: 19px;
+color: white;
+margin-top: 3%;
+}
+.row {
+  margin-top: 3%;
+  display: block;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.campus-col {
+width: auto;
+  flex-basis: 32%;
+  border-radius: 10px;
+  margin: 0 35px 35px;
+  position: relative;
+  overflow: hidden;
+}
+.campus-col img {
+  width: 100%;
+  display: block;
+}
+.layer {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: .5s;
+}
+.layer:hover {
+  background: #0000009f;
+}
+.layer h3 {
+  width: 100%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+  bottom: 0;
+  left: 40%;
+  transform: translateX(-40%);
+  position: absolute;
+  opacity: 0;
+  transition: 1s;
+  margin-bottom: 10%;
+}
+.layer:hover h3 {
+  bottom: 25%;
+  opacity: 1;
+  transition-timing-function: linear;
+}
+.info-box {
+  flex-direction: column;
+  align-items: center;
+}
+.reverse {
+  flex-direction: column-reverse;
+}
+.info-box img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  height: 200px;
+  width: 250px;
+}
+
+.cta {
+  margin: auto;
+  margin-top: 5%;
+  width: 80%;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(image/Building1.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px ;
+  margin-bottom: 10%;
+}
+.cta h1 {
+  color: #fff;
+  margin-bottom: 40px;
+  padding: 0;
+  font-size: 30px;
+}
+.cta h2{
+margin-top: 3%;
+color: white;
+line-height: 1.5;
+font-size: 15px;
+}
+/* Contact Us */
+
+.option{
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 50px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#contact{
+  font-size: 20px;
+  border: 2px solid;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+.option1{
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#name{
+  font-size: 25px;
+  border: 2px solid;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+#text{
+  height: 200px;
+  width: 370px;
+  font-size: 20px;
+}
+.modal-content {
+  position: relative;
+  float: right;
+  background-color: navy;
+  width: 100%;
+  height: 100%;
+  animation-name: animatetop;
+  animation-duration: 1s;
+  margin-top: -41.65%;
+}
 }

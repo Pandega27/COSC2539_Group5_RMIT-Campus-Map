@@ -25,6 +25,9 @@
           <img src="image/logo.png" alt="logo" />
         </a>
         <h1 style="font-weight: 600;">Navigate To Building 9</h1>
+        <div class="button">
+          <a href="maps.html" class="hero-btn2"> Back to Main Maps</a>
+      </div>
       </nav>
       <hr color="red" height="10px" />
     </section>
@@ -53,12 +56,15 @@
         var latlang = [
           [
           [10.7292, 106.6958],
-            [10.7296, 106.6958],
-            [10.7296, 106.6946],
+          [10.72952, 106.6958],
+            [10.72952, 106.6958],
+            [10.72952, 106.6956],
+            [10.72955, 106.6955],
+            [10.72955, 106.6946],
             [10.72946, 106.6946],
             [10.72948, 106.69355],
-            [10.72957, 106.69355],
-            [10.72957, 106.69345],
+            [10.72961, 106.69355],
+            [10.72961, 106.69345],
           ],
         ];
 
@@ -73,25 +79,75 @@
         // Adding multi poly-line to map
         multipolyline.addTo(map);
 
+        var lc = L.control
+          .locate({
+          position: "topleft",
+          strings: {
+          title: "Show me where I am!"
+            }
+          })
+          .addTo(map);
 
-        L.marker([10.72957, 106.69345],{
-          title:"Building 9",
+
+        L.marker([10.72928, 106.69522],{
+          title:"Building 1",
         })
-        .bindPopup('<span class="button"> <b> Building 9 </b> <br> <a href="building9.html"> View more </a><br> </span>')
+        .bindPopup('<span class="button"> <b> Building 1 </b> <br> <a href="building1.html"> Whats in Building 1? </a> <br><br> <a href="navb9b1.html"> Navigate To B1 From B9</a><br> </span>')
+        .addTo(map);
+
+        L.marker([10.72928, 106.6963],{title:"Building 2"})
+        .bindPopup('<span class="button"> <b> Building 2 </b> <br> <a href="building2.html"> Whats in Building 2? </a><br> <br> <a href="navb9b2.html"> Navigate To B2 from b9</a><br>  </span>')
+        .addTo(map);
+
+        L.marker([10.72962, 106.69345],{title:"Building 9"})
+        .bindPopup('<span class="button"> <b> Building 9 </b> <br> <a href="building9.html"> Whats in Building 9? </a> <br></span>')
+        .addTo(map);
+
+        L.marker([10.72927, 106.69345],{title:"Building 8"})
+        .bindPopup('<span class="button"> <b> Building 8 </b> <br> <a href="building8.html"> Whats in Building 8? </a> <br> <br> <a href="navb9b8.html"> Navigate to B8 from b9</a><br> </span>')
+        .addTo(map);
+
+        L.marker([10.72948, 106.69275],{title:"Sports Hall"})
+        .bindPopup('<span class="button"> <b> Sports Hall </b> <br> <a href="sportshall.html"> Whats in Sports Hall? </a> <br><br> <a href="navb9sportshall.html"> Navigate to Sports Hall from b9</a> <br> </span>') 
         .addTo(map);
     </script>
-
+        <div class="modal-content" style="width: 20%;">
+          <div class="modal-header">
+            <div class="button">
+              <br>
+              <h4 style="font-size: 25px;">RMIT Maps Instructions</h4>
+          </div>
+        </div>
+    
+        <div class="modal-footer">
+          <hr color="red" height="10px" />
+              <br>
+              <p class="modal-footer" style="font-weight: 600; line-height: 1.5;"> 
+                By Clicking on the marker, 
+                <br>
+                you can pick every building to see
+                <br>
+                <br>
+                what is in the building or Navigate from your current location
+                <br>
+                <br>
+                on the top left you can zoom out and also see where are you right now!
+                <br><br>
+              </p>
+              </div>
+        </div>
     
   </body>
 
   <footer>
     <section class="footer">
       <ul>
+        <a href="maps.html"><li>Full Maps</li></a>
         <a href="building1.html"><li>Building 1</li></a>
         <a href="building2.html"><li>Building 2</li></a>
         <a href="building8.html"><li>Building 8</li></a>
         <a href="building9.html"><li>Building 9</li></a>
-        <a href="sporthall.html"><li>Sports Hall</li></a>
+        <a href="sportshall.html"><li>Sports Hall</li></a>
       </ul>
     </section>
   </footer>
