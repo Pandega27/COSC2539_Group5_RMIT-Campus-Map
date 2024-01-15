@@ -730,10 +730,10 @@ background-position-x: center;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  top: 55%;
 }
 .text-box h1 {
   font-size: 35px;
-  margin-top: 15%;
   margin-bottom: 5%;
 }
 .text-box p {
