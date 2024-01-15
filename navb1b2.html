@@ -17,7 +17,7 @@
   <body>
     <section class="header">
       <nav>
-        <a href="index.html">
+        <a href="index.html" class="img">
           <img src="image/logo.png" alt="logo" />
         </a>
         <h1 style="font-weight: 600;">Building 1 ➨ Building 2 </h1> 
@@ -34,7 +34,7 @@
       <script>
         // Creating map options
         var mapOptions = {
-          center: [10.7295, 106.6945],
+          center: [10.7298, 106.6945],
           zoom: 18,
         };
         // Creating a map object
@@ -79,7 +79,7 @@
         .addTo(map);
 
         L.marker([10.72948, 106.69275],{title:"Sports Hall"})
-        .bindPopup('<span class="button"> <b> Sports Hall </b> <br> <a href="sporthall.html"> Whats in Sports hall? </a> <br><br> <a href="navb2sportshall.html"> Navigate To Sports Hall From B2 </a><br> <br> <a href="navb1sportshall.html"> Navigate To Sports Hall from B1 </a><br> </span>') 
+        .bindPopup('<span class="button"> <b> Sports Hall </b> <br> <a href="sportshall.html"> Whats in Sports hall? </a> <br><br> <a href="navb2sportshall.html"> Navigate To Sports Hall From B2 </a><br> <br> <a href="navb1sportshall.html"> Navigate To Sports Hall from B1 </a><br> </span>') 
         .addTo(map);
 
         var lc = L.control
@@ -101,7 +101,7 @@
         multipolyline.addTo(map);
     </script>
     
-    <div class="modal-content" style="width: 20%;">
+    <div class="modal-content">
       <div class="modal-header">
         <div class="button">
           <br>

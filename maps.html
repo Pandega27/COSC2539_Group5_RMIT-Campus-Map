@@ -20,8 +20,7 @@
   <body>
     <section class="header">
       <nav>
-        <a href="index.html " class="img">
-          <img src="image/logo.png" alt="logo" />
+        <a href="index.html" class="img"><img src="image/logo.png" /></a>
         </a>
         <h1>Welcome to RMIT Maps!</h1>
       </nav>
@@ -41,10 +40,10 @@
         if (width < 500) {
           zoom = 17;
         }
-
+      
         // Creating map options
         var mapOptions = {
-          center: [10.7295, 106.6945],
+          center: [10.7298, 106.6945],
           zoom,
         };
         // Creating a map object
@@ -90,11 +89,11 @@
         .addTo(map);
 
         L.marker([10.72948, 106.69275],{title:"Sports Hall"})
-        .bindPopup('<span class="button"> <b> Sports Hall </b> <br> <a href="sporthall.html"> Whats in Sports Hall? </a><br><br> <a href="navsportshall.html"> Navigate To Sports Hall </a><br> </span>') 
+        .bindPopup('<span class="button"> <b> Sports Hall </b> <br> <a href="sportshall.html"> Whats in Sports Hall? </a><br><br> <a href="navsportshall.html"> Navigate To Sports Hall </a><br> </span>') 
         .addTo(map);
     </script>
 
-    <div class="modal-content" style="width: 20%;">
+    <div class="modal-content">
       <div class="modal-header">
         <div class="button">
           <br>
@@ -130,7 +129,7 @@
         <a href="building2.html"><li>Building 2</li></a>
         <a href="building8.html"><li>Building 8</li></a>
         <a href="building9.html"><li>Building 9</li></a>
-        <a href="sporthall.html"><li>Sports Hall</li></a>
+        <a href="sportshall.html"><li>Sports Hall</li></a>
       </ul>
     </section>
   </footer>
