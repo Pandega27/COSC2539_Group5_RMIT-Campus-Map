@@ -1,2 +1,2 @@
 To open the Maps
-user should open terminal in VScode and enter NPM i leafletjs
+user should download the file and open terminal in VScode and enter NPM i leafletjs
