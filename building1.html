@@ -19,23 +19,33 @@
   <body>
     <section class="header">
         <nav>
-          <a href="index.html">
+          <a href="index.html" class="img">
             <img src="image/logo.png" alt="logo"/>
           </a>
           <h1> Welcome To Building 1</h1>
         </nav>
         <hr color="red" height="10px" />
-      </section>
+    </section>
 
     <!--- Creating GeoJSON Location F0r Navigation --->
     <section class="location">
       <div id="map" style="width: 100%; height: 800px"></div>
       <script>
+         var width = window.innerWidth;
+        console.log(width);
+
+        let zoom = 18; // desktop
+        if (width < 500) {
+          zoom = 17;
+        }
+
+        
         // Creating map options
         var mapOptions = {
-          center: [10.7295, 106.6962],
+          center: [10.7295, 106.6953],
           zoom: 18,
         };
+        
         // Creating a map object
         var map = new L.map("map", mapOptions);
 

@@ -14,7 +14,7 @@
     />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <title>Welcome to Building 2</title>
-    <link rel="icon" type="image/x-icon" href="image/icon.png">
+    <link rel="icon" type="image/x-icon" href="image/icon.png" />
   </head>
   <body>
     <section class="header">
@@ -22,7 +22,7 @@
         <a href="index.html" class="img">
           <img src="image/logo.png" alt="logo" />
         </a>
-        <h1> Welcome To Building 2</h1>
+        <h1>Welcome To Building 2</h1>
       </nav>
       <hr color="red" height="10px" />
     </section>
@@ -30,80 +30,91 @@
     <!--- Creating GeoJSON Location F0r Navigation --->
     <section class="location">
       <div id="map" style="width: 100%; height: 800px"></div>
-      <script>
-        // Creating map options
-        var mapOptions = {
-          center: [10.7295, 106.6962],
-          zoom: 18,
-        };
-        // Creating a map object
-        var map = new L.map("map", mapOptions);
 
-        // Creating a Layer object
-        var layer = new L.TileLayer(
-          "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        );
-
-        // Adding layer to the map
-        map.addLayer(layer);
-
-        // Creating latlng object
-        var latlang = [
-        ];
-
-        // Creating poly line options
-        var multiPolyLineOptions = { color: "red" };
-
-        // Creating multi poly-lines
-        var multipolyline = L.multiPolyline(latlang, multiPolyLineOptions);
-
-        // Adding multi poly-line to map
-        multipolyline.addTo(map);
-
-        L.marker([10.72928, 106.6963],{title:"Building 2"})
-        .bindPopup('<span class="button"> <b> Building 2 </b><br> <a href="navb2.html"> Navigate To B2 </a><br> </span>')
-        .addTo(map);
-    </script>
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="button">
-        <a href="maps.html" class="btn"> ❌ </a>
-      </div>
-            <img src="image/building2.png" width="100%" style="opacity: 0.8;">
-            <h2>Building 2</h2>
-            <div class="button">
-                <a href="enterb2.html" class="button-press"> Enter </a>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="button">
+            <a href="maps.html" class="btn"> ❌ </a>
+          </div>
+          <img src="image/building2.png" width="100%" style="opacity: 0.8" />
+          <h2>Building 2</h2>
+          <div class="button">
+            <a href="enterb2.html" class="button-press"> Enter </a>
+          </div>
         </div>
         <div class="modal-footer">
-          <h4 style="font-size: 25px;">WELCOME TO BUILDING 2</h4>
-          <br>
-          <p class="modal-footer" style="font-weight: 600; line-height: 1.5;"> Building 2 at RMIT Vietnam's Saigon campus 
-            is a hub of academic resources, 
-            research materials, and collaborative learning spaces. 
-            <br>
-            This modern and welcoming facility is designed to support students and faculty 
-            in their pursuit of knowledge, research, and intellectual growth.
-            <br> These are some rooms that are inside Building 2:
-            <br>
-            <br>
+          <h4 style="font-size: 25px">WELCOME TO BUILDING 2</h4>
+          <br />
+          <p class="modal-footer" style="font-weight: 600; line-height: 1.5">
+            Building 2 at RMIT Vietnam's Saigon campus is a hub of academic
+            resources, research materials, and collaborative learning spaces.
+            <br />
+            This modern and welcoming facility is designed to support students
+            and faculty in their pursuit of knowledge, research, and
+            intellectual growth.
+            <br />
+            These are some rooms that are inside Building 2:
+            <br />
+            <br />
             1. Extensive Collection of Resources
-            <br>
+            <br />
             2. Study Areas and Reading Rooms
-            <br>
+            <br />
             3. Digital Resources and Technology
-            <br>
+            <br />
             4. Research Support Services
-            <br>
+            <br />
             5. Collaboration and Academic Workshops
-            <br>
+            <br />
             6. Special Collections and Archives
-            <br><br><br>
+            <br /><br /><br />
           </p>
-          </div>
-    </div>
-    
+        </div>
+      </div>
+    </section>
+    <script>
+      var width = window.innerWidth;
+      console.log(width);
+
+      let zoom = 18; // desktop
+      if (width < 500) {
+        zoom = 17;
+      }
+
+      // Creating map options
+      var mapOptions = {
+        center: [10.7295, 106.6962],
+        zoom: 18,
+      };
+      // Creating a map object
+      var map = new L.map("map", mapOptions);
+
+      // Creating a Layer object
+      var layer = new L.TileLayer(
+        "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      );
+
+      // Adding layer to the map
+      map.addLayer(layer);
+
+      // Creating latlng object
+      var latlang = [];
+
+      // Creating poly line options
+      var multiPolyLineOptions = { color: "red" };
+
+      // Creating multi poly-lines
+      var multipolyline = L.multiPolyline(latlang, multiPolyLineOptions);
+
+      // Adding multi poly-line to map
+      multipolyline.addTo(map);
+
+      L.marker([10.72928, 106.6963], { title: "Building 2" })
+        .bindPopup(
+          '<span class="button"> <b> Building 2 </b><br> <a href="navb2.html"> Navigate To B2 </a><br> </span>'
+        )
+        .addTo(map);
+    </script>
   </body>
 
   <footer>

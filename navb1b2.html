@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
     />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js"
+      charset="utf-8"
+    ></script>
+
     <title>Navigate Building 1 ➨ Building 2</title>
-    <link rel="icon" type="image/x-icon" href="image/icon.png">
+    <link rel="icon" type="image/x-icon" href="image/icon.png" />
   </head>
   <body>
     <section class="header">
@@ -20,10 +28,8 @@
         <a href="index.html" class="img">
           <img src="image/logo.png" alt="logo" />
         </a>
-        <h1 style="font-weight: 600;">Building 1 ➨ Building 2 </h1> 
-        <div class="button">
-          <a href="maps.html" class="hero-btn2"> Back to Main Maps</a>
-      </div>
+        <h1 style="font-weight: 600">Building 1 ➨ Building 2</h1>
+        <a href="maps.html" class="hero-btn2"> Back to Main Maps</a>
       </nav>
       <hr color="red" height="10px" />
     </section>
@@ -32,10 +38,18 @@
     <section class="location">
       <div id="map" style="width: 100%; height: 800px"></div>
       <script>
+        var width = window.innerWidth;
+        console.log(width);
+
+        let zoom = 18; // desktop
+        if (width < 500) {
+          zoom = 17;
+        }
+
         // Creating map options
         var mapOptions = {
           center: [10.7298, 106.6945],
-          zoom: 18,
+          zoom,
         };
         // Creating a map object
         var map = new L.map("map", mapOptions);
@@ -51,46 +65,54 @@
         // Creating latlng object
         var latlang = [
           [
-          
             [10.7294, 106.69632],
             [10.72955, 106.69632],
             [10.72955, 106.69525],
             [10.7294, 106.69525],
           ],
         ];
-        
 
-        L.marker([10.72928, 106.69522],{
-          title:"Building 1",
+        L.marker([10.72928, 106.69522], {
+          title: "Building 1",
         })
-        .bindPopup('<span class="button"> <b> Building 1 </b> <br> <a href="building1.html"> Whats in Building 1? </a><br> <br> <a href="navb2b1.html"> Navigate To B1 From B2 </a><br>  </span>')
-        .addTo(map);
+          .bindPopup(
+            '<span class="button"> <b> Building 1 </b> <br> <a href="building1.html"> Whats in Building 1? </a><br> <br> <a href="navb2b1.html"> Navigate To B1 From B2 </a><br>  </span>'
+          )
+          .addTo(map);
 
-        L.marker([10.72928, 106.6963],{title:"Building 2"})
-        .bindPopup('<span class="button"> <b> Building 2 </b> <br> <a href="building2.html"> Whats In Building 2 </a> <br> </span>')
-        .addTo(map);
+        L.marker([10.72928, 106.6963], { title: "Building 2" })
+          .bindPopup(
+            '<span class="button"> <b> Building 2 </b> <br> <a href="building2.html"> Whats In Building 2 </a> <br> </span>'
+          )
+          .addTo(map);
 
-        L.marker([10.72962, 106.69345],{title:"Building 9"})
-        .bindPopup('<span class="button"> <b> Building 9 </b> <br> <a href="building9.html"> Whats in Building 9? </a> <br> <br> <a href="navb2b9.html"> Navigate To B9 From B2 </a><br> <br> <a href="navb1b9.html"> Navigate To B9 From B1 </a><br></span>')
-        .addTo(map);
+        L.marker([10.72962, 106.69345], { title: "Building 9" })
+          .bindPopup(
+            '<span class="button"> <b> Building 9 </b> <br> <a href="building9.html"> Whats in Building 9? </a> <br> <br> <a href="navb2b9.html"> Navigate To B9 From B2 </a><br> <br> <a href="navb1b9.html"> Navigate To B9 From B1 </a><br></span>'
+          )
+          .addTo(map);
 
-        L.marker([10.72927, 106.69345],{title:"Building 8"})
-        .bindPopup('<span class="button"> <b> Building 8 </b> <br> <a href="building8.html"> Whats in Building 8? </a> <br><br> <a href="navb2b8.html"> Navigate To B8 From B2</a><br> <br> <a href="navb1b8.html"> Navigate To B8 From B1 </a><br> </span>')
-        .addTo(map);
+        L.marker([10.72927, 106.69345], { title: "Building 8" })
+          .bindPopup(
+            '<span class="button"> <b> Building 8 </b> <br> <a href="building8.html"> Whats in Building 8? </a> <br><br> <a href="navb2b8.html"> Navigate To B8 From B2</a><br> <br> <a href="navb1b8.html"> Navigate To B8 From B1 </a><br> </span>'
+          )
+          .addTo(map);
 
-        L.marker([10.72948, 106.69275],{title:"Sports Hall"})
-        .bindPopup('<span class="button"> <b> Sports Hall </b> <br> <a href="sportshall.html"> Whats in Sports hall? </a> <br><br> <a href="navb2sportshall.html"> Navigate To Sports Hall From B2 </a><br> <br> <a href="navb1sportshall.html"> Navigate To Sports Hall from B1 </a><br> </span>') 
-        .addTo(map);
+        L.marker([10.72948, 106.69275], { title: "Sports Hall" })
+          .bindPopup(
+            '<span class="button"> <b> Sports Hall </b> <br> <a href="sportshall.html"> Whats in Sports hall? </a> <br><br> <a href="navb2sportshall.html"> Navigate To Sports Hall From B2 </a><br> <br> <a href="navb1sportshall.html"> Navigate To Sports Hall from B1 </a><br> </span>'
+          )
+          .addTo(map);
 
         var lc = L.control
           .locate({
-          position: "topleft",
-          strings: {
-          title: "Show me where I am"
-            }
+            position: "topleft",
+            strings: {
+              title: "Show me where I am",
+            },
           })
           .addTo(map);
-        
+
         // Creating poly line options
         var multiPolyLineOptions = { color: "red" };
 
@@ -99,32 +121,33 @@
 
         // Adding multi poly-line to map
         multipolyline.addTo(map);
-    </script>
-    
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="button">
-          <br>
-          <h4 style="font-size: 25px;">RMIT Maps Instructions</h4>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <hr color="red" height="10px"/>
-          <br>
-          <p class="modal-footer" style="font-weight: 600; line-height: 1.5;"> 
-            on the topleft also available a button to zoom out and show where you are right now!.
-            <br><br>
-            You can navigate to other building by clicking on the marker and a choice is provided.
-            <br>
-            <br>
-            you can navigate from the building you start or where you just navigate to
-            <br><br>
-          </p>
+      </script>
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="button">
+            <br />
+            <h4 style="font-size: 25px">RMIT Maps Instructions</h4>
           </div>
-    </div>
-
-
-    
+        </div>
+        <div class="modal-footer">
+          <hr color="red" height="10px" />
+          <br />
+          <p class="modal-footer" style="font-weight: 600; line-height: 1.5">
+            on the topleft also available a button to zoom out and show where
+            you are right now!.
+            <br /><br />
+            You can navigate to other building by clicking on the marker and a
+            choice is provided.
+            <br />
+            <br />
+            you can navigate from the building you start or where you just
+            navigate to
+            <br /><br />
+          </p>
+        </div>
+      </div>
+    </section>
   </body>
 
   <footer>
